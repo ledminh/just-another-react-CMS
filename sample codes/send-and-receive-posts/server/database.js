@@ -63,10 +63,28 @@ function readAPost(title){
 }
 
 
+function readAllPosts(){
+    const collectionName = "test-1";
+
+    async function read(db){
+        const result = await db.collection(collectionName).find();
+
+        if(result) {
+            return await result.toArray();
+        }
+        else {
+            console.error("Nothing found!!!");
+        }
+    }
+
+    return read;
+}
+
 
 module.exports = {
     run,
     addAPost,
-    readAPost
+    readAPost,
+    readAllPosts
 };
 

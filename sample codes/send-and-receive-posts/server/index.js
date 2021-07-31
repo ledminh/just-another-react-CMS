@@ -4,12 +4,12 @@ const routes = require('./routes')
 
 async function main() {
     const app = express()
-    const port = 3001
+    const port = 3001;
 
     
    
 
-    routes.run(app);
+    routes.run(app, express);
     
     
     
